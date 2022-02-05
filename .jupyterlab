@@ -1,22 +1,6 @@
 {
     "shortcuts": [
         {
-            "command": "kernelmenu:interrupt",
-            "keys": [
-                "I",
-                "I"
-            ],
-            "selector": "[data-jp-kernel-user]:focus"
-        },
-        {
-            "command": "kernelmenu:restart",
-            "keys": [
-                "0",
-                "0"
-            ],
-            "selector": "[data-jp-kernel-user]:focus"
-        },
-        {
             "command": "notebook:move-cell-up",
             "keys": [
                 "Ctrl Shift ArrowUp"
