@@ -1,0 +1,69 @@
+{
+    "shortcuts": [
+        {
+            "command": "kernelmenu:interrupt",
+            "keys": [
+                "I",
+                "I"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
+            "command": "kernelmenu:restart",
+            "keys": [
+                "0",
+                "0"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
+            "command": "notebook:move-cell-up",
+            "keys": [
+                "Ctrl Shift ArrowUp"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:move-cell-down",
+            "keys": [
+                "Ctrl Shift ArrowDown"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "runmenu:run-all",
+            "keys": [
+                "R",
+                "R"
+            ],
+            "selector": "[data-jp-kernel-user]:focus"
+        },
+        {
+            "command": "notebook:run-all-below",
+            "keys": [
+                "R", 
+                "D"
+            ],
+            "selector": ".jp-Notebook:focus",
+            "title": "Run All Below",
+            "category": "Notebook Cell Operations"
+        },
+        {
+            "command": "notebook:run-all-above",
+            "keys": [
+                "R", 
+                "U"
+            ],
+            "selector": ".jp-Notebook:focus",
+            "title": "Run All Above",
+            "category": "Notebook Cell Operations"
+        },
+        {
+            "command": "runmenu:restart-and-run-all",
+            "keys": [
+                "Ctrl Shift R"
+            ],
+            "selector": "[data-jp-code-runner]"
+        },
+    ]
+}
