@@ -1,5 +1,50 @@
 # self-defined snippets
 
+snippet fenwick
+	class Fenwick: 
+		def __init__(self, n: int):
+			self.nums = [0]*(n+1)
+
+		def update(self, k: int, x: int) -> None: 
+			k += 1
+			while k < len(self.nums): 
+				self.nums[k] += x
+				k += k & -k 
+
+		def query(self, k: int) -> int: 
+			k += 1
+			ans = 0
+			while k:
+				ans += self.nums[k]
+				k -= k & -k
+			return ans
+
+
+snippet trie
+	class Trie:
+		def __init__(self):
+			self.root = {}
+
+		def insert(self, word: str) -> None:
+			node = self.root
+			for ch in word: node = node.setdefault(ch, {})
+			node['$'] = word
+
+		def prefix(self, word: str) -> bool: 
+			node = self.root 
+			for ch in prefix: 
+				if ch not in node: return False 
+				node = node[ch] 
+			return True 
+
+		def search(self, word: str) -> bool:
+			node = self.root
+			for ch in word:
+				if ch not in node: return False 
+				node = node[ch]
+			return '$' in node
+
+
 snippet unionfind
     class UnionFind:
         def __init__(self, n: int):
@@ -7,8 +52,8 @@ snippet unionfind
             self.rank = [1] * n
 
         def find(self, p: int) -> int:
-            if p != self.parent[p]:
-                self.parent[p] = self.find(self.parent[p])
+            if p != self.parent[p]: 
+				self.parent[p] = self.find(self.parent[p])
             return self.parent[p]
 
         def union(self, p: int, q: int) -> bool:
