@@ -1,0 +1,125 @@
+# self-defined snippets
+
+snippet fenwick
+	class Fenwick: 
+		def __init__(self, n: int):
+			self.nums = [0]*(n+1)
+
+		def update(self, k: int, x: int) -> None: 
+			k += 1
+			while k < len(self.nums): 
+				self.nums[k] += x
+				k += k & -k 
+
+		def query(self, k: int) -> int: 
+			k += 1
+			ans = 0
+			while k:
+				ans += self.nums[k]
+				k -= k & -k
+			return ans
+
+
+snippet segtree
+	class SegTree: 
+		def __init__(self, arr: List[int]): 
+			self.n = len(arr)
+			self.tree = [0]*(4*self.n)
+			self._build(arr, 0, 0, self.n)
+
+		def _build(self, arr: List[int], k: int, lo: int, hi: int) -> None: 
+			if lo+1 == hi: 
+				self.tree[k] = arr[lo]
+				return 
+			mid = lo + hi >> 1
+			self._build(arr, 2*k+1, lo, mid)
+			self._build(arr, 2*k+2, mid, hi)
+			self.tree[k] = min(self.tree[2*k+1], self.tree[2*k+2])
+
+		def update(self, idx: int, val: int, k: int = 0, lo: int = 0, hi: int = 0) -> None:
+			if not hi: hi = self.n
+			if lo+1 == hi: 
+				self.tree[k] = val 
+				return 
+			mid = lo + hi >> 1
+			if idx < mid: self.update(idx, val, 2*k+1, lo, mid) 
+			else: self.update(idx, val, 2*k+2, mid, hi)
+			self.tree[k] = min(self.tree[2*k+1], self.tree[2*k+2])
+
+		def query(self, qlo: int, qhi: int, k: int = 0, lo: int = 0, hi: int = 0) -> int: 
+			if not hi: hi = self.n
+			if qlo <= lo and hi <= qhi: return self.tree[k] # total overlap 
+			if qhi <= lo or  hi <= qlo: return inf # no overlap 
+			mid = lo + hi >> 1 # partial overlap 
+			return min(self.query(qlo, qhi, 2*k+1, lo, mid), self.query(qlo, qhi, 2*k+2, mid, hi))
+
+
+snippet trie
+	class Trie:
+		def __init__(self):
+			self.root = {}
+
+		def insert(self, word: str) -> None:
+			node = self.root
+			for ch in word: node = node.setdefault(ch, {})
+			node['$'] = word
+
+		def prefix(self, word: str) -> bool: 
+			node = self.root 
+			for ch in prefix: 
+				if ch not in node: return False 
+				node = node[ch] 
+			return True 
+
+		def search(self, word: str) -> bool:
+			node = self.root
+			for ch in word:
+				if ch not in node: return False 
+				node = node[ch]
+			return '$' in node
+
+
+snippet unionfind
+    class UnionFind:
+        def __init__(self, n: int):
+            self.parent = list(range(n))
+            self.rank = [1] * n
+
+        def find(self, p: int) -> int:
+            if p != self.parent[p]: 
+				self.parent[p] = self.find(self.parent[p])
+            return self.parent[p]
+
+        def union(self, p: int, q: int) -> bool:
+            prt, qrt = self.find(p), self.find(q)
+            if prt == qrt: return False
+            if self.rank[prt] > self.rank[qrt]: prt, qrt = qrt, prt 
+            self.parent[prt] = qrt
+            self.rank[qrt] += self.rank[prt]
+            return True
+
+
+snippet contest
+	#!/usr/bin/python3
+
+	from bisect import *
+	from collections import *
+	from copy import *
+	from functools import *
+	from heapq import *
+	from itertools import *
+	from math import * 
+	from operator import *
+	from re import *
+	from string import *
+	from typing import *
+
+	class Contest:
+		"""Programming contest"""
+
+		def __init__(self):
+			"""Write your code here."""
+			${0}
+
+	if __name__ == "__main__": 
+		sol = Contest()
