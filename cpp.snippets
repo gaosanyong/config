@@ -1,0 +1,135 @@
+# self-defined snippets
+
+snippet fenwick
+    template<class T>
+    class Fenwick {
+      /*Fenwick tree with prefix sum query*/
+      vector<T> nums; 
+    public: 
+      Fenwick(int n) {
+          nums.resize(n+1); 
+      }
+
+      void update(int k, T x) {
+          /*Add kth element with value x.*/
+          for (++k; k < nums.size(); k += k & -k) 
+              nums[k] += x; 
+      }
+
+      T query(int k) {
+          /*Return prefix sum of nums[0] ... nums[k] (inclusive).*/
+          T ans = 0; 
+          for (++k; k; k -= k & -k) 
+              ans += nums[k]; 
+          return ans; 
+      }
+    }; 
+
+
+snippet trie
+    struct TrieNode {
+        TrieNode* children[26] = {nullptr};
+        bool is_word = false;
+        ~TrieNode() { for (auto& node : children) delete node; }
+    };
+
+    class Trie {
+    public: 
+        TrieNode* root = nullptr; 
+
+        Trie() { root = new TrieNode(); }
+
+        ~Trie() { delete root; }
+
+        void insert(string word) {
+            TrieNode* node = root; 
+            for (auto& ch : word) {
+                if (!node->children[ch-'a']) node->children[ch-'a'] = new TrieNode(); 
+                node = node->children[ch-'a'];
+            }
+            node->is_word = true; 
+        }
+
+        bool prefix(string word) {
+            TrieNode* node = root; 
+            for (auto& ch : word) {
+                node = node->children[ch-'a']; 
+                if (!node) return false; 
+            }
+            return true; 
+        }
+
+        bool search(string word) {
+            TrieNode* node = root; 
+            for (auto& ch : word) {
+                node = node->children[ch - 'a']; 
+                if (!node) return false; 
+            }
+            return node->is_word; 
+        }
+    };
+
+
+snippet unionfind
+    class UnionFind {
+    public: 
+        vector<int> parent, rank; 
+        UnionFind(int n) {
+            parent.resize(n); 
+            iota(begin(parent), end(parent), 0); 
+            rank.resize(n); 
+            fill(rank.begin(), rank.end(), 1); 
+        } 
+
+        int find(int p) {
+            if (parent[p] != p) 
+                parent[p] = find(parent[p]); 
+            return parent[p]; 
+        }
+
+        bool connect(int p, int q) {
+            int prt = find(p), qrt = find(q); 
+            if (prt == qrt) return false; 
+            if (rank[prt] > rank[qrt]) swap(prt, qrt);
+            parent[prt] = qrt; 
+            rank[qrt] += rank[prt]; 
+            return true; 
+        }
+    };
+
+
+snippet contest
+    #include <algorithm>
+    #include <bitset>
+    #include <deque>
+    #include <iostream>
+    #include <map>
+    #include <multimap>
+    #include <numeric>
+    #include <pair>
+    #include <queue> // including priority_queue
+    #include <set>
+    #include <multiset>
+    #include <stack>
+    #include <string>
+    #include <tuple>
+    #include <unordered_map>
+    #include <unordered_set>
+    #include <vector>
+
+    #include "trie.h"
+    #include "unionfind.h"
+
+    using namespace std; 
+
+    class Contest {
+        /*Programming contest*/
+        
+        void solve() {
+            /*Write your code here.*/
+            ${0}
+        }
+    }
+    
+    sol = Contest()
+    sol.solve()
