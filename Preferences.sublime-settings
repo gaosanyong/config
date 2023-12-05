@@ -1,0 +1,23 @@
+{
+	"font_size": 17,
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"dark_color_scheme": "Celeste.sublime-color-scheme",
+	"light_color_scheme": "Celeste.sublime-color-scheme",
+	"theme": "Adaptive.sublime-theme",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+    "bold_folder_labels": true,
+    "ensure_newline_at_eof_on_save": true,
+    "highlight_line": true,
+    "highlight_modified_tabs": true,
+    "relative_line_numbers": true,
+    "rulers": [80],
+    "save_on_focus_lost": true,
+    "show_encoding": true,
+    "show_line_endings": true,
+    "translate_tabs_to_spaces": true,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+}
