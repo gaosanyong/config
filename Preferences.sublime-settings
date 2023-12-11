@@ -1,13 +1,10 @@
 {
     "font_size": 17,
-    "color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
+    "color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
     "dark_color_scheme": "Celeste.sublime-color-scheme",
     "light_color_scheme": "Celeste.sublime-color-scheme",
-    "theme": "Afterglow.sublime-theme",
-    "ignored_packages":
-    [
-        "Vintage",
-    ],
+    "theme": "GitHub Adaptive.sublime-theme",
+    "ignored_packages": ["Vintage",],
     "bold_folder_labels": true,
     "ensure_newline_at_eof_on_save": true,
     "highlight_line": true,
