@@ -8,6 +8,7 @@
     "auto_complete_commit_on_tab": true, 
     "bold_folder_labels": true,
     "ensure_newline_at_eof_on_save": true,
+    "font_face": "Hack",
     "highlight_line": true,
     "highlight_modified_tabs": true,
     "index_files": true,
