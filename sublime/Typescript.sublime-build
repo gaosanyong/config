@@ -1,0 +1,5 @@
+{
+    "shell": true,
+    "cmd": ["tsc", "$file"],
+    "selector": "source.ts"
+}

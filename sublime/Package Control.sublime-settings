@@ -1,0 +1,24 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"ColorPicker",
+		"Dracula Color Scheme",
+		"GitGutter",
+		"Github Color Theme",
+		"GitHub Theme",
+		"LSP",
+		"LSP-typescript",
+		"MarkdownLivePreview",
+		"Package Control",
+		"PlainTasks",
+		"ReadmePlease",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"Terminus",
+	],
+}

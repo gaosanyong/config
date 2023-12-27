@@ -1,16 +1,28 @@
+/*
+Packages
+------------------------------------------
+- A File Icon         |
+- GitGutter           |
+- MarkdownLivePreview |
+- Package Control     |
+- Terminus            |
+- LSP                 |
+------------------------------------------
+*/
 {
     "font_size": 17,
-    "color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+    "color_scheme": "Monokai.sublime-color-scheme",
     "dark_color_scheme": "Celeste.sublime-color-scheme",
     "light_color_scheme": "Celeste.sublime-color-scheme",
     "theme": "GitHub Adaptive.sublime-theme",
-    "ignored_packages": ["Vintage",],
-    "auto_complete_commit_on_tab": true, 
+    "ignored_packages": [ "Vintage", ],
+    "auto_complete_commit_on_tab": true,
     "bold_folder_labels": true,
     "ensure_newline_at_eof_on_save": true,
     "font_face": "Hack",
     "highlight_line": true,
     "highlight_modified_tabs": true,
+    "index_exclude_gitignore": false,
     "index_files": true,
     "relative_line_numbers": true,
     "rulers": [80],

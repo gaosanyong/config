@@ -1,0 +1,15 @@
+/*
+alt - option
+ctrl - control
+shift - shift
+super - command
+*/
+[
+    { "keys": ["super+shift+v"], "command": "paste" },
+    { "keys": ["super+v"], "command": "paste_and_indent" },
+    { "keys": ["alt+`"], "command": "toggle_terminus_panel" },
+    { "keys": ["ctrl+super+s"], "command": "clone_file", "args": {"add_to_selection" : true, "retain_viewport_position": true} },
+    { "keys": ["super+;"], "command": "run_macro_file", "args": {"file" : "res://Packages/User/EOL Semicolon.sublime-macro"} },
+    { "keys": ["ctrl+w"], "command": "run_macro_file", "args": {"file" : "res://Packages/User/Quote the Word.sublime-macro"} },
+    { "keys": ["alt+m"], "command": "open_markdown_preview" },
+]
