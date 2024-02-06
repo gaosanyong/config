@@ -2,6 +2,26 @@
 "Don't put any lines in your vimrc that you don't understand
 "https://dougblack.io/words/a-good-vimrc.html
 
+"Plug-in Manager
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+      silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Using https://github.com/junegunn/vim-plug plugin manager
+call plug#begin('~/.vim/plugged')
+Plug 'SirVer/ultisnips'        "ultimate solution for snippets
+Plug 'honza/vim-snippets'      "snipMate & UltiSnip snippets
+Plug 'itchyny/lightline.vim'   "light & configurable statusline/tabline
+Plug 'ryanoasis/vim-devicons'  "adds icons to plugins
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline' "lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()                "initialize plugin system
+
 "Colors
 colorscheme desert "awesome colorscheme
 syntax enable      "enable syntax highlighting
@@ -24,8 +44,7 @@ set shiftwidth=4   "number of spaces per indent
 set smarttab       "use shiftwidth, tabstop softtabstop smartly
 set softtabstop=4  "number of spaces in tab when editing
 set tabstop=4      "number of visual space per TAB
-set laststatus=2   "current file name
-set statusline+=%F "full path to file
+set encoding=UTF-8 "required by devicon
 
 "UI Config
 filetype indent on "load filetype-specific indent file
@@ -49,6 +68,9 @@ set foldlevelstart=10 "open most folds by default
 set foldnestmax=10    "10 nested fold max
 set foldmethod=indent "fold based on indent level
 
+set clipboard=unnamed "use system clipboard
+set dip+=vertical     "show diffs side-by-side
+
 "Run Commands
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
@@ -63,18 +85,23 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-"Plug-in Manager
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-      silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+noremap <C-t> :bo term<CR>
 
-call plug#begin('~/.vim/plugged')
-Plug 'honza/vim-snippets'      "snipMate & UltiSnip snippets
-Plug 'itchyny/lightline.vim'   "light & configurable statusline/tabline
-Plug 'SirVer/ultisnips'        "ultimate solution for snippets
-call plug#end()
+"airline
+let g:airline#extensions#ale#enabled=1
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#ctrlp#enabled=1
+let g:airline_theme='minimalist'
+let g:airline_powerline_fonts=1
 
+" NERDTree
+let NERDTreeIgnore = ['\.py[co]$', '__pycache__']
+nmap <F6> :NERDTreeToggle<CR>
+comm! NT NERDTreeToggle
+let g:NERDTreeWinSize = 50
+
+"ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-l>" " list all snippets for current filetype
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
