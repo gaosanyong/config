@@ -87,6 +87,11 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 noremap <C-t> :bo term<CR>
 
+"vim-oscyank
+nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c_
+vmap <leader>c <Plug>OSCYankVisual
+
 "airline
 let g:airline#extensions#ale#enabled=1
 let g:airline#extensions#branch#enabled=1
@@ -105,3 +110,19 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-l>" " list all snippets for current filetype
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"noremap <C-t> :bo term<CR>
+noremap <C-t> :vertical botright term ++kill=term<CR>
+
+" Commenting blocks of code.
+augroup commenting_blocks_of_code
+  autocmd!
+  autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+  autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+  autocmd FileType conf,fstab       let b:comment_leader = '# '
+  autocmd FileType tex              let b:comment_leader = '% '
+  autocmd FileType mail             let b:comment_leader = '> '
+  autocmd FileType vim              let b:comment_leader = '" '
+augroup END
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
