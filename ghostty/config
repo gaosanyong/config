@@ -1,0 +1,15 @@
+adjust-cell-height = 35%
+background = 1C2021
+background-opacity = 0.96
+cursor-style = block
+font-family = "MesloLGS NF"
+font-size = 12
+foreground = d4be98
+macos-titlebar-style = transparent
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+shell-integration-features = no-cursor,sudo,no-title
+theme = GruvboxDarkHard
+window-colorspace = "display-p3"
+window-padding-balance = true
+window-save-state = always

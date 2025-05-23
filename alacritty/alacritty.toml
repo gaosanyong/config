@@ -1,0 +1,25 @@
+
+[general]
+import = [
+    "~/.config/alacritty/alacritty-theme/themes/gruvbox_light.toml"
+]
+
+[env]
+TERM = "alacritty"
+
+[window]
+blur = true
+decorations = "Buttonless"
+dimensions = { columns = 150, lines = 50 }
+dynamic_padding = true
+opacity = 0.75
+option_as_alt = "Both"
+padding = { x = 10, y = 10 }
+
+[font]
+normal.family = "MesloLGS Nerd Font Mono"
+offset = { x = 0, y = 3 }
+size = 12
+
+[selection]
+save_to_clipboard = true

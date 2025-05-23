@@ -1,0 +1,8 @@
+*.bak/
+*.meta/
+alacritty/alacritty-theme/
+containers/
+iterm2/
+nvim/lazy-lock.json
+ranger/
+tmux/plugins

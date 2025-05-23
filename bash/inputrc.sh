@@ -5,5 +5,6 @@
 # Respect default shortcuts.
 $include /etc/inputrc
 
+# Allow history search by prefix
 "\e[A":history-search-backward # arrow up
 "\e[B":history-search-forward  # arrow down

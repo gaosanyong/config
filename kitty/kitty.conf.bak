@@ -1,0 +1,14 @@
+active_border_color #00ffff
+background_image /Users/gaoyescm/Downloads/frog.jpg
+background_image_layout cscaled 
+background_tint 0.95
+background_tint_gaps -10
+enabled_layouts Tall, *
+font_size 14
+macos_option_as_alt no
+map f1 new_window_with_cwd
+single_window_margin_width 0
+tab_bar_style powerline
+tab_powerline_style slanted
+window_border_width 2pt
+window_margin_width 10
