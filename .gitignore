@@ -1,0 +1,7 @@
+*.bak/
+*.meta/
+alacritty/alacritty-theme/
+containers/
+iterm2/
+ranger/
+tmux/plugins

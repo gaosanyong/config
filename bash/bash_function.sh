@@ -1,11 +1,4 @@
-if [ -f /etc/bashrc ]; then
-    . /etc/bashrc
-fi
-
-if [ -e ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
+ 
 epochconverter() {
     # This function replicates the functionality of
     # https://www.epochconverter.com/
@@ -20,3 +13,5 @@ epochconverter() {
         echo "One argument is required."
     fi
 }
+
+

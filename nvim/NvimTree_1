@@ -1,0 +1,30 @@
+~/.config/nvim/..
+  lua
+    gaoyescm
+      core
+      plugins
+    │   lsp
+    │ │ └  mason.lua
+    │ │  alpha.lua
+    │ │  auto-session.lua
+    │ │  autopairs.lua
+    │ │  bufferline.lua
+    │ │  colorscheme.lua
+    │ │  comment.lua
+    │ │  dressing.lua
+    │ │  indent-blankline.lua
+    │ │  init.lua
+    │ │  lualine.lua
+    │ │  nvim-cmp.lua
+    │ │  nvim-tree.lua
+    │ │  substitute.lua
+    │ │  surround.lua
+    │ │  telescope.lua
+    │ │  todo-comments.lua
+    │ │  treesitter.lua
+    │ │  vim-maximizer.lua
+    │ └  which-key.lua
+    └  lazy.lua
+   init.lua
+   lazy-lock.json
+   NvimTree_1
