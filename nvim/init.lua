@@ -39,3 +39,15 @@ end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" }, -- Apply to all file types
+  callback = function(ev)
+    -- Save cursor position to prevent it from jumping
+    local save_cursor = vim.fn.getpos(".")
+    -- Execute the substitute command to remove trailing whitespace
+    vim.cmd([[%s/\s\+$//e]])
+    -- Restore cursor position
+    vim.fn.setpos(".", save_cursor)
+  end,
+})
