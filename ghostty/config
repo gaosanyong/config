@@ -1,15 +1,34 @@
+# -- Typography --
+font-family = "MesloLGS Nerd Font Mono"
+font-size = 14
 adjust-cell-height = 35%
-background = 1C2021
+
+# -- Theme and Colors --
+theme = everforest-light
+
+# -- Window and Appearance --
 background-opacity = 0.96
-cursor-style = block
-font-family = "MesloLGS NF"
-font-size = 12
-foreground = d4be98
+background-blur-radius = 30
 macos-titlebar-style = transparent
-mouse-hide-while-typing = true
-mouse-scroll-multiplier = 2
-shell-integration-features = no-cursor,sudo,no-title
-theme = GruvboxDarkHard
 window-colorspace = "display-p3"
 window-padding-balance = true
+window-padding-x = 10
+window-padding-y = 8
 window-save-state = always
+window-theme = auto
+
+# -- Cursor --
+cursor-style = bar
+cursor-style-blink = true
+cursor-opacity = 0.8
+
+# -- Mouse --
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+# -- Quick Terminal --
+quick-terminal-position = top
+
+# -- Other --
+shell-integration-features = no-cursor,sudo,no-title

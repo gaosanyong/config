@@ -1,38 +1,26 @@
-# user-defined aliases (imported by .bashrc)
+# user-defined aliases (sourced by .bashrc)
 
-# drop-in replacement
+# drop-in replacements
 alias cat=bat
 alias cd=z
 alias grep=rg
 alias ls='eza --icons=always'
+alias ll='ls -la'
+alias l.='ls -d .*'
 
-# control cd command behavior
 alias ..='cd ..'
-
-# start calculator with math support
 alias bc='bc -l'
-
-# create parent directories on demand
 alias mkdir='mkdir -pv'
 
-# command short cuts
 alias h='history | less'
 alias untar='tar -zxvf'
 
-# create a new set of commands
 alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
 alias today='date +"%Y-%m-%d"'
 
-# control output of ping
 alias ping='ping -c 5'
-
-# resuem wget by default
 alias wget='wget -c'
-
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
 
 # Meta specific
 alias jfd='jf submit --draft'

@@ -1,8 +1,12 @@
 *.bak/
 *.meta/
 alacritty/alacritty-theme/
+cagent/
 containers/
 iterm2/
+jupyterlab
 nvim/lazy-lock.json
+nvim.meta
 ranger/
+snippet/
 tmux/plugins

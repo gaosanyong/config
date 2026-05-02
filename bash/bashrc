@@ -1,0 +1,26 @@
+if [[ -f /etc/bashrc ]]; then
+    . /etc/bashrc
+fi
+
+if [[ -e ~/.bash_alias ]]; then
+    source ~/.bash_alias
+fi
+
+if [[ -e ~/.bash_function ]]; then
+    source ~/.bash_function
+fi
+
+# export Homebrew environment variables
+# e.g. $PATH contains Homebrew locations
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(fzf --bash)"
+if [[ -n "$TMUX" ]]; then
+  tmux_client=$(tmux display -p '#{client_termname}' 2>/dev/null)
+fi
+if [[ $TERM =~ ghostty ]] || [[ "$tmux_client" =~ ghostty ]]; then
+  eval "$(oh-my-posh init bash --config ~/.themes/everforest_light.omp.json)"
+fi
+eval "$(zoxide init bash)"
+
+export PATH="$PATH:/Users/gaoyescm/.local/bin"
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"

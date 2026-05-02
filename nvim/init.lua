@@ -23,8 +23,6 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
   },
 })
 
-vim.o.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
 
 function _G.set_terminal_keymaps()
   local opts = { buffer = 0 }

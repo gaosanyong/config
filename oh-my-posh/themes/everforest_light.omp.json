@@ -1,0 +1,123 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#f2efdf",
+          "foreground": "#5c6a72",
+          "style": "powerline",
+          "template": "{{ if .WSL }}WSL at{{ end }} {{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "background": "#ecf5ed",
+          "foreground": "#3a94c5",
+          "powerline_symbol": "",
+          "properties": {
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#f3f5d9",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#fef2d5{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ffe7de{{ end }}",
+            "{{ if gt .Ahead 0 }}#fceced{{ end }}",
+            "{{ if gt .Behind 0 }}#fceced{{ end }}"
+          ],
+          "foreground": "#8da101",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#f57d26{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f85552{{ end }}",
+            "{{ if gt .Ahead 0 }}#df69ba{{ end }}",
+            "{{ if gt .Behind 0 }}#df69ba{{ end }}"
+          ],
+          "powerline_symbol": "",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "branch_icon": " "
+          },
+          "style": "powerline",
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        },
+        {
+          "background": "#f3f5d9",
+          "foreground": "#35a77c",
+          "powerline_symbol": "",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "go"
+        },
+        {
+          "background": "#fceced",
+          "foreground": "#df69ba",
+          "powerline_symbol": "",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "julia"
+        },
+        {
+          "background": "#fef2d5",
+          "foreground": "#dfa000",
+          "powerline_symbol": "",
+          "properties": {
+            "display_mode": "files",
+            "fetch_virtual_env": false
+          },
+          "style": "powerline",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "python"
+        },
+        {
+          "background": "#ffe7de",
+          "foreground": "#f85552",
+          "powerline_symbol": "",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "ruby"
+        },
+        {
+          "background": "#fef2d5",
+          "foreground": "#f57d26",
+          "powerline_symbol": "",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": false
+          },
+          "style": "powerline",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "type": "azfunc"
+        },
+        {
+          "background": "#fef2d5",
+          "foreground": "#dfa000",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "template": "  ",
+          "type": "root"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{ .Folder }}",
+  "final_space": true,
+  "version": 3
+}

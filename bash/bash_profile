@@ -1,0 +1,33 @@
+if [[ -f ~/.bashrc ]]; then
+    . ~/.bashrc
+fi
+
+# keeps Mac awake
+if ! pgrep "caffeinate" > /dev/null
+then
+    caffeinate -id &
+    disown
+fi
+
+# -- History --
+export HISTCONTROL=erasedups:ignorespace
+export HISTFILE=$HOME/.bash_history
+export HISTFILESIZE=10000
+export HISTIGNORE='history*:ls*'
+export HISTSIZE=10000
+export HISTTIMEFORMAT="%h %d %H:%M:%S> "
+
+# -- Environment variables --
+export BAT_THEME="Everforest Light"
+export CPPFLAGS="-I/opt/homebrew/opt/util-linux/include"
+export DEVSERVER=devvm15778.vll0.facebook.com
+export EDITOR=nvim
+export EZA_CONFIG_DIR="$HOME/.config/eza/everforest-light/"
+export LDFLAGS="-L/opt/homebrew/opt/util-linux/lib"
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
+export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
+export PS1='\[\e[0;38;5;82m\]$ \[\e[0;38;5;45m\]macbook \[\e[0;38;5;45m\](\[\e[0;38;5;39m\]\W\[\e[0;38;5;45m\]) \[\e[0;1;38;5;45m\]>\[\e[0m\] '
+export VISUAL=nvim
+
+stty -ixon      # disable XON/XOFF control flow

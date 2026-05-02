@@ -1,0 +1,40 @@
+# general tools
+
+epochconverter() {
+    # https://www.epochconverter.com/
+    if [[ $# -eq 1 ]]; then
+        re='^[0-9]+$'
+        if [[ $1 =~ $re ]]; then
+            date "+%m/%d/%Y %H:%M:%S.%3N%z" -d @$(echo "$1/1000" | bc -l)
+        else
+            date +%s%N -d "$1" | cut -b1-13
+        fi
+    else
+        echo "One argument is required."
+    fi
+}
+
+# Meta specific tools
+
+GREEN='\033[1;92m'
+RESET='\033[0m'
+
+list_targets() {
+    # list_targets [--change <commit>]
+    mkdir -p ~/files
+    sl status -mn "$@" | xargs -I {} buck2 query "owner({})" 2> /dev/null | sort | uniq | tee ~/files/targets
+}
+
+buildem() {
+    while IFS= read -r target; do
+        build_type=$(buck uquery --output-attribute buck.type "$target" 2> /dev/null | jq -r ".[\"${target}\"].\"buck.type\"")
+        if [[ $build_type =~ .*test$ ]]; then
+            target="test $target"
+        else
+            target="build $target"
+        fi
+        echo -e "${GREEN}buck $target${RESET}"
+        buck $target
+        echo
+    done < ~/files/targets
+}

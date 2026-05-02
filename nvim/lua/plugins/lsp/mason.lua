@@ -40,7 +40,6 @@ return {
       ensure_installed = {
         "clang-format", -- c/cpp formatter
         "goimports", -- go formatter
-        "rustfmt", -- rust formatter
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "isort", -- python formatter
