@@ -3,8 +3,9 @@ TERM = "alacritty"
 
 [font]
 normal.family = "MesloLGS Nerd Font Mono"
-offset = { x = 0, y = 3 }
-size = 12
+offset = { x = 0, y = 5 }
+glyph_offset = { x = 0, y = 4 }
+size = 14
 
 [general]
 import = [
@@ -24,6 +25,6 @@ blur = true
 decorations = "Buttonless"
 dimensions = { columns = 200, lines = 50 }
 dynamic_padding = true
-opacity = 0.75
+opacity = 0.95
 option_as_alt = "Both"
 padding = { x = 10, y = 10 }
