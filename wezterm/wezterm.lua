@@ -27,4 +27,7 @@ config.keys = {
   },
 }
 
+config.window_decorations = "NONE"
+config.hide_tab_bar_if_only_one_tab = true
+
 return config
