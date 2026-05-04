@@ -1,19 +1,30 @@
--- Pull in the wezterm API
-local wezterm = require 'wezterm'
-
--- This will hold the configuration.
+local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices.
-
--- For example, changing the initial geometry for new windows:
 config.initial_cols = 120
 config.initial_rows = 28
-
--- or, changing the font size and color scheme.
-config.font_size = 10
-config.color_scheme = 'AdventureTime'
+config.font_size = 14
+config.color_scheme = "Catppuccin Mocha"
 config.term = "wezterm"
 
--- Finally, return the configuration to wezterm:
+local f = io.open(wezterm.home_dir .. "/.local/state/last_cwd", "r")
+if f then
+  local cwd = f:read("*l")
+  f:close()
+  if cwd and cwd ~= "" then
+    config.default_cwd = cwd
+  end
+end
+
+config.keys = {
+  {
+    key = "k",
+    mods = "SUPER",
+    action = wezterm.action.Multiple({
+      wezterm.action.SendKey({ key = "l", mods = "CTRL" }),
+      wezterm.action.ClearScrollback("ScrollbackOnly"),
+    }),
+  },
+}
+
 return config

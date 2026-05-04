@@ -18,11 +18,9 @@ export HISTSIZE=10000
 export HISTTIMEFORMAT="%h %d %H:%M:%S> "
 
 # -- Environment variables --
-export BAT_THEME="Everforest Light"
 export CPPFLAGS="-I/opt/homebrew/opt/util-linux/include"
 export DEVSERVER=devvm15778.vll0.facebook.com
 export EDITOR=nvim
-export EZA_CONFIG_DIR="$HOME/.config/eza/everforest-light/"
 export LDFLAGS="-L/opt/homebrew/opt/util-linux/lib"
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"

@@ -4,28 +4,26 @@ return {
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status")
+    local terminal = require("core.terminal").detect()
 
-    local term = vim.env.TERM or ""
-    local tmux_term = ""
-    if vim.env.TMUX then
-      tmux_term = vim.fn.system("tmux display -p '#{client_termname}'"):gsub("%s+", "")
-    end
-    local is_alacritty = term:match("alacritty") or tmux_term:match("alacritty")
-    local is_kitty = term:match("kitty") or tmux_term:match("kitty")
-
-    local lualine_theme = "everforest"
-    if is_kitty then
+    local lualine_theme = "catppuccin"
+    if terminal == "kitty" then
       lualine_theme = "solarized_dark"
-    elseif is_alacritty then
+    elseif terminal == "alacritty" then
       lualine_theme = "gruvbox_light"
+    elseif terminal == "ghostty" then
+      lualine_theme = "everforest"
     end
 
-    local sec_sep = { left = "", right = "" }
-    local comp_sep = { left = "", right = "" }
-    if is_kitty then
+    local sec_sep = { left = "", right = "" }
+    local comp_sep = { left = "", right = "" }
+    if terminal == "ghostty" then
+      sec_sep = { left = "", right = "" }
+      comp_sep = { left = "", right = "" }
+    elseif terminal == "kitty" then
       sec_sep = { left = "▌", right = "▐" }
       comp_sep = { left = "▌", right = "▐" }
-    elseif is_alacritty then
+    elseif terminal == "alacritty" then
       sec_sep = { left = "", right = "" }
       comp_sep = { left = "", right = "" }
     end
@@ -51,4 +49,3 @@ return {
     })
   end,
 }
-

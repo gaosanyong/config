@@ -1,0 +1,140 @@
+# Catppuccin Mocha for eza
+
+filekinds:
+  normal:
+    foreground: "#CDD6F4"
+  directory:
+    foreground: "#89B4FA"
+    bold: true
+  symlink:
+    foreground: "#94E2D5"
+  pipe:
+    foreground: "#F9E2AF"
+  block_device:
+    foreground: "#FAB387"
+  char_device:
+    foreground: "#FAB387"
+  socket:
+    foreground: "#CBA6F7"
+  special:
+    foreground: "#F9E2AF"
+  executable:
+    foreground: "#A6E3A1"
+    bold: true
+  mount_point:
+    foreground: "#89B4FA"
+    bold: true
+
+perms:
+  user_read:
+    foreground: "#A6E3A1"
+  user_write:
+    foreground: "#F9E2AF"
+  user_execute_file:
+    foreground: "#F38BA8"
+  user_execute_other:
+    foreground: "#F38BA8"
+  group_read:
+    foreground: "#A6E3A1"
+  group_write:
+    foreground: "#F9E2AF"
+  group_execute:
+    foreground: "#F38BA8"
+  other_read:
+    foreground: "#A6E3A1"
+  other_write:
+    foreground: "#F9E2AF"
+  other_execute:
+    foreground: "#F38BA8"
+  special_user_file:
+    foreground: "#CBA6F7"
+  special_other:
+    foreground: "#CBA6F7"
+  attribute:
+    foreground: "#6C7086"
+
+size:
+  number_byte:
+    foreground: "#A6E3A1"
+  number_kilo:
+    foreground: "#A6E3A1"
+  number_mega:
+    foreground: "#F9E2AF"
+  number_giga:
+    foreground: "#FAB387"
+  number_huge:
+    foreground: "#F38BA8"
+  unit_byte:
+    foreground: "#A6E3A1"
+  unit_kilo:
+    foreground: "#A6E3A1"
+  unit_mega:
+    foreground: "#F9E2AF"
+  unit_giga:
+    foreground: "#FAB387"
+  unit_huge:
+    foreground: "#F38BA8"
+
+users:
+  user_you:
+    foreground: "#89B4FA"
+  user_other:
+    foreground: "#6C7086"
+  group_yours:
+    foreground: "#89B4FA"
+  group_other:
+    foreground: "#6C7086"
+
+git:
+  new:
+    foreground: "#A6E3A1"
+  modified:
+    foreground: "#F9E2AF"
+  deleted:
+    foreground: "#F38BA8"
+  renamed:
+    foreground: "#94E2D5"
+  ignored:
+    foreground: "#585B70"
+  conflicted:
+    foreground: "#F38BA8"
+    bold: true
+
+symlink_path:
+  foreground: "#94E2D5"
+
+punctuation:
+  foreground: "#585B70"
+
+date:
+  foreground: "#CBA6F7"
+
+inode:
+  foreground: "#6C7086"
+
+blocks:
+  foreground: "#6C7086"
+
+header:
+  foreground: "#CDD6F4"
+  bold: true
+
+filetype:
+  image:
+    foreground: "#CBA6F7"
+  video:
+    foreground: "#CBA6F7"
+  music:
+    foreground: "#94E2D5"
+  lossless:
+    foreground: "#94E2D5"
+  crypto:
+    foreground: "#FAB387"
+  document:
+    foreground: "#89B4FA"
+  compressed:
+    foreground: "#F38BA8"
+  temp:
+    foreground: "#585B70"
+  compiled:
+    foreground: "#F9E2AF"

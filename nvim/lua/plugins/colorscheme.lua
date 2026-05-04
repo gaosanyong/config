@@ -40,29 +40,30 @@ return {
   dependencies = {
     "ellisonleao/gruvbox.nvim",
     "ishan9299/nvim-solarized-lua",
+    "catppuccin/nvim",
   },
   config = function()
-    local term = vim.env.TERM or ""
-    local tmux_term = ""
-    if vim.env.TMUX then
-      tmux_term = vim.fn.system("tmux display -p '#{client_termname}'"):gsub("%s+", "")
-    end
+    local terminal = require("core.terminal").detect()
 
-    if term:match("kitty") or tmux_term:match("kitty") then
+    if terminal == "kitty" then
       vim.o.background = "dark"
       vim.cmd.colorscheme("solarized")
-    elseif term:match("alacritty") or tmux_term:match("alacritty") then
+    elseif terminal == "alacritty" then
       vim.o.background = "light"
       require("gruvbox").setup({
         italic = { strings = true, emphasis = true, comments = true },
       })
       vim.cmd.colorscheme("gruvbox")
-    else
+    elseif terminal == "ghostty" then
       vim.o.background = "light"
       vim.g.everforest_background = "hard"
       vim.g.everforest_enable_italic = true
       vim.g.everforest_better_performance = 1
       vim.cmd.colorscheme("everforest")
+    else
+      vim.o.background = "dark"
+      require("catppuccin").setup({ flavour = "mocha" })
+      vim.cmd.colorscheme("catppuccin")
     end
   end,
 }

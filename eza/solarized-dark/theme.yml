@@ -1,0 +1,140 @@
+# Solarized Dark for eza
+
+filekinds:
+  normal:
+    foreground: "#839496"
+  directory:
+    foreground: "#268bd2"
+    bold: true
+  symlink:
+    foreground: "#2aa198"
+  pipe:
+    foreground: "#b58900"
+  block_device:
+    foreground: "#cb4b16"
+  char_device:
+    foreground: "#cb4b16"
+  socket:
+    foreground: "#6c71c4"
+  special:
+    foreground: "#b58900"
+  executable:
+    foreground: "#859900"
+    bold: true
+  mount_point:
+    foreground: "#268bd2"
+    bold: true
+
+perms:
+  user_read:
+    foreground: "#859900"
+  user_write:
+    foreground: "#b58900"
+  user_execute_file:
+    foreground: "#dc322f"
+  user_execute_other:
+    foreground: "#dc322f"
+  group_read:
+    foreground: "#859900"
+  group_write:
+    foreground: "#b58900"
+  group_execute:
+    foreground: "#dc322f"
+  other_read:
+    foreground: "#859900"
+  other_write:
+    foreground: "#b58900"
+  other_execute:
+    foreground: "#dc322f"
+  special_user_file:
+    foreground: "#6c71c4"
+  special_other:
+    foreground: "#6c71c4"
+  attribute:
+    foreground: "#586e75"
+
+size:
+  number_byte:
+    foreground: "#859900"
+  number_kilo:
+    foreground: "#859900"
+  number_mega:
+    foreground: "#b58900"
+  number_giga:
+    foreground: "#cb4b16"
+  number_huge:
+    foreground: "#dc322f"
+  unit_byte:
+    foreground: "#859900"
+  unit_kilo:
+    foreground: "#859900"
+  unit_mega:
+    foreground: "#b58900"
+  unit_giga:
+    foreground: "#cb4b16"
+  unit_huge:
+    foreground: "#dc322f"
+
+users:
+  user_you:
+    foreground: "#268bd2"
+  user_other:
+    foreground: "#586e75"
+  group_yours:
+    foreground: "#268bd2"
+  group_other:
+    foreground: "#586e75"
+
+git:
+  new:
+    foreground: "#859900"
+  modified:
+    foreground: "#b58900"
+  deleted:
+    foreground: "#dc322f"
+  renamed:
+    foreground: "#2aa198"
+  ignored:
+    foreground: "#073642"
+  conflicted:
+    foreground: "#dc322f"
+    bold: true
+
+symlink_path:
+  foreground: "#2aa198"
+
+punctuation:
+  foreground: "#073642"
+
+date:
+  foreground: "#6c71c4"
+
+inode:
+  foreground: "#586e75"
+
+blocks:
+  foreground: "#586e75"
+
+header:
+  foreground: "#93a1a1"
+  bold: true
+
+filetype:
+  image:
+    foreground: "#6c71c4"
+  video:
+    foreground: "#6c71c4"
+  music:
+    foreground: "#2aa198"
+  lossless:
+    foreground: "#2aa198"
+  crypto:
+    foreground: "#cb4b16"
+  document:
+    foreground: "#268bd2"
+  compressed:
+    foreground: "#dc322f"
+  temp:
+    foreground: "#073642"
+  compiled:
+    foreground: "#b58900"
