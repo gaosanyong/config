@@ -1,0 +1,26 @@
+
+## Status bar — solarized dark (powerline style matching lualine)
+set status-position top
+set status-interval 5
+set status-style "bg=#073642,fg=#93a1a1"
+
+# Left: session name with powerline rounds
+set status-left-length 40
+set status-left "#[bg=#268bd2,fg=#002b36,bold] #S #[bg=#073642,fg=#268bd2]▌"
+
+# Right: dir, date, time with powerline rounds
+set status-right-length 80
+set status-right "#[fg=#586e75]▐#[bg=#586e75,fg=#002b36] #{=30:pane_current_path} #[fg=#268bd2]▐#[bg=#268bd2,fg=#002b36,bold] %a %b %d %H:%M "
+
+# Window list
+set status-justify left
+set window-status-format "#[fg=#073642,bg=#586e75]▌#[fg=#002b36,bg=#586e75] #I:#W #[fg=#586e75,bg=#073642]▌"
+set window-status-current-format "#[fg=#073642,bg=#268bd2]▌#[fg=#002b36,bg=#268bd2,bold] #I:#W #[fg=#268bd2,bg=#073642]▌"
+set window-status-separator " "
+
+# Pane borders
+set pane-border-style "fg=#586e75"
+set pane-active-border-style "fg=#268bd2"
+
+# Message and command bar
+set message-style "bg=#268bd2,fg=#002b36,bold"

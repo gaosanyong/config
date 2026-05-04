@@ -5,16 +5,16 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#f2e5bc",
-          "foreground": "#7c6f64",
+          "background": "#073642",
+          "foreground": "#93a1a1",
           "style": "powerline",
           "template": "{{ if .WSL }}WSL at{{ end }} {{.Icon}} ",
           "type": "os"
         },
         {
-          "background": "#e8eeef",
-          "foreground": "#458588",
-          "powerline_symbol": "",
+          "background": "#0b4d6a",
+          "foreground": "#839496",
+          "powerline_symbol": "▌",
           "properties": {
             "style": "full"
           },
@@ -23,21 +23,21 @@
           "type": "path"
         },
         {
-          "background": "#edf0d5",
+          "background": "#2a4a32",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#f5e8da{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f5e0db{{ end }}",
-            "{{ if gt .Ahead 0 }}#f0e4ed{{ end }}",
-            "{{ if gt .Behind 0 }}#f0e4ed{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#4a3520{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#4a2020{{ end }}",
+            "{{ if gt .Ahead 0 }}#2d2a4a{{ end }}",
+            "{{ if gt .Behind 0 }}#2d2a4a{{ end }}"
           ],
-          "foreground": "#98971a",
+          "foreground": "#859900",
           "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#d65d0e{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#cc241d{{ end }}",
-            "{{ if gt .Ahead 0 }}#b16286{{ end }}",
-            "{{ if gt .Behind 0 }}#b16286{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#cb4b16{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#dc322f{{ end }}",
+            "{{ if gt .Ahead 0 }}#6c71c4{{ end }}",
+            "{{ if gt .Behind 0 }}#6c71c4{{ end }}"
           ],
-          "powerline_symbol": "",
+          "powerline_symbol": "▌",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
@@ -48,9 +48,9 @@
           "type": "git"
         },
         {
-          "background": "#e6efea",
-          "foreground": "#689d6a",
-          "powerline_symbol": "",
+          "background": "#1a3a3a",
+          "foreground": "#2aa198",
+          "powerline_symbol": "▌",
           "properties": {
             "fetch_version": true
           },
@@ -59,9 +59,9 @@
           "type": "go"
         },
         {
-          "background": "#f0e4ed",
-          "foreground": "#b16286",
-          "powerline_symbol": "",
+          "background": "#2d2a4a",
+          "foreground": "#6c71c4",
+          "powerline_symbol": "▌",
           "properties": {
             "fetch_version": true
           },
@@ -70,9 +70,9 @@
           "type": "julia"
         },
         {
-          "background": "#f8f0da",
-          "foreground": "#d79921",
-          "powerline_symbol": "",
+          "background": "#3a3010",
+          "foreground": "#b58900",
+          "powerline_symbol": "▌",
           "properties": {
             "display_mode": "files",
             "fetch_virtual_env": false
@@ -82,9 +82,9 @@
           "type": "python"
         },
         {
-          "background": "#f5e0db",
-          "foreground": "#cc241d",
-          "powerline_symbol": "",
+          "background": "#4a2020",
+          "foreground": "#dc322f",
+          "powerline_symbol": "▌",
           "properties": {
             "display_mode": "files",
             "fetch_version": true
@@ -94,9 +94,9 @@
           "type": "ruby"
         },
         {
-          "background": "#f5e8da",
-          "foreground": "#d65d0e",
-          "powerline_symbol": "",
+          "background": "#4a3520",
+          "foreground": "#cb4b16",
+          "powerline_symbol": "▌",
           "properties": {
             "display_mode": "files",
             "fetch_version": false
@@ -106,9 +106,9 @@
           "type": "azfunc"
         },
         {
-          "background": "#f8f0da",
-          "foreground": "#d79921",
-          "powerline_symbol": "",
+          "background": "#3a3010",
+          "foreground": "#b58900",
+          "powerline_symbol": "▌",
           "style": "powerline",
           "template": "  ",
           "type": "root"

@@ -1,26 +1,26 @@
 
 ## Status bar — everforest light (powerline style matching lualine)
-set -g status-position top
-set -g status-interval 5
-set -g status-style "bg=#F8F5E4,fg=#939F91"
+set status-position top
+set status-interval 5
+set status-style "bg=#F8F5E4,fg=#939F91"
 
 # Left: mode + session name with powerline triangles
-set -g status-left-length 40
-set -g status-left "#[bg=#93B259,fg=#FFFBEF,bold] #S #[bg=#F8F5E4,fg=#93B259]"
+set status-left-length 40
+set status-left "#[bg=#93B259,fg=#FFFBEF,bold] #S #[bg=#F8F5E4,fg=#93B259]"
 
 # Right: dir, date, time with powerline triangles
-set -g status-right-length 80
-set -g status-right "#[fg=#EDEADA]#[bg=#EDEADA,fg=#829181] #{=30:pane_current_path} #[fg=#93B259]#[bg=#93B259,fg=#FFFBEF,bold] %a %b %d %H:%M "
+set status-right-length 80
+set status-right "#[fg=#EDEADA]#[bg=#EDEADA,fg=#829181] #{=30:pane_current_path} #[fg=#93B259]#[bg=#93B259,fg=#FFFBEF,bold] %a %b %d %H:%M "
 
 # Window list
-set -g status-justify left
-set -g window-status-format "#[fg=#F8F5E4,bg=#EDEADA]#[fg=#829181,bg=#EDEADA] #I:#W #[fg=#EDEADA,bg=#F8F5E4]"
-set -g window-status-current-format "#[fg=#F8F5E4,bg=#93B259]#[fg=#FFFBEF,bg=#93B259,bold] #I:#W #[fg=#93B259,bg=#F8F5E4]"
-set -g window-status-separator " "
+set status-justify left
+set window-status-format "#[fg=#F8F5E4,bg=#EDEADA]#[fg=#829181,bg=#EDEADA] #I:#W #[fg=#EDEADA,bg=#F8F5E4]"
+set window-status-current-format "#[fg=#F8F5E4,bg=#93B259]#[fg=#FFFBEF,bg=#93B259,bold] #I:#W #[fg=#93B259,bg=#F8F5E4]"
+set window-status-separator " "
 
 # Pane borders
-set -g pane-border-style "fg=#EDEADA"
-set -g pane-active-border-style "fg=#93B259"
+set pane-border-style "fg=#EDEADA"
+set pane-active-border-style "fg=#93B259"
 
 # Message and command bar
-set -g message-style "bg=#93B259,fg=#FFFBEF,bold"
+set message-style "bg=#93B259,fg=#FFFBEF,bold"

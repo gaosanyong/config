@@ -1,7 +1,7 @@
 # -- Typography --
 font-family = "MesloLGS Nerd Font Mono"
 font-size = 14
-adjust-cell-height = 35%
+adjust-cell-height = 20%
 
 # -- Theme and Colors --
 theme = everforest-light

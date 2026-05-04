@@ -19,6 +19,16 @@ if [[ -n "$TMUX" ]]; then
 fi
 if [[ $TERM =~ ghostty ]] || [[ "$tmux_client" =~ ghostty ]]; then
   eval "$(oh-my-posh init bash --config ~/.themes/everforest_light.omp.json)"
+  export BAT_THEME="Everforest Light"
+  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/everforest-light.theme
+elif [[ $TERM =~ alacritty ]] || [[ "$tmux_client" =~ alacritty ]]; then
+  eval "$(oh-my-posh init bash --config ~/.themes/gruvbox_light.omp.json)"
+  export BAT_THEME="gruvbox-light"
+  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/gruvbox-light.theme
+elif [[ $TERM =~ kitty ]] || [[ "$tmux_client" =~ kitty ]]; then
+  eval "$(oh-my-posh init bash --config ~/.themes/solarized_dark.omp.json)"
+  export BAT_THEME="Solarized (dark)"
+  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/solarized-dark.theme
 fi
 eval "$(zoxide init bash)"
 

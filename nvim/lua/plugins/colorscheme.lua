@@ -37,11 +37,32 @@ return {
   "sainnhe/everforest",
   lazy = false,
   priority = 1000,
+  dependencies = {
+    "ellisonleao/gruvbox.nvim",
+    "ishan9299/nvim-solarized-lua",
+  },
   config = function()
-    vim.o.background = "light"
-    vim.g.everforest_background = "hard"
-    vim.g.everforest_enable_italic = true
-    vim.g.everforest_better_performance = 1
-    vim.cmd.colorscheme("everforest")
+    local term = vim.env.TERM or ""
+    local tmux_term = ""
+    if vim.env.TMUX then
+      tmux_term = vim.fn.system("tmux display -p '#{client_termname}'"):gsub("%s+", "")
+    end
+
+    if term:match("kitty") or tmux_term:match("kitty") then
+      vim.o.background = "dark"
+      vim.cmd.colorscheme("solarized")
+    elseif term:match("alacritty") or tmux_term:match("alacritty") then
+      vim.o.background = "light"
+      require("gruvbox").setup({
+        italic = { strings = true, emphasis = true, comments = true },
+      })
+      vim.cmd.colorscheme("gruvbox")
+    else
+      vim.o.background = "light"
+      vim.g.everforest_background = "hard"
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_better_performance = 1
+      vim.cmd.colorscheme("everforest")
+    end
   end,
 }
