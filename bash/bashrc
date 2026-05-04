@@ -1,41 +1,37 @@
-if [[ -f /etc/bashrc ]]; then
-    . /etc/bashrc
-fi
+# Return early if non-interactive (e.g., scp)
+[[ $- != *i* ]] && return
 
-if [[ -e ~/.bash_alias ]]; then
-    source ~/.bash_alias
-fi
-
-if [[ -e ~/.bash_function ]]; then
-    source ~/.bash_function
-fi
+[[ -f /etc/bashrc      ]] && source /etc/bashrc
+[[ -e ~/.bash_alias    ]] && source ~/.bash_alias
+[[ -e ~/.bash_function ]] && source ~/.bash_function
 
 # export Homebrew environment variables
 # e.g. $PATH contains Homebrew locations
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --bash)"
+eval "$(zoxide init bash)"
+
 if [[ -n "$TMUX" ]]; then
   tmux_client=$(tmux display -p '#{client_termname}' 2>/dev/null)
 fi
 export BAT_THEME="ansi"
+setup_theme() {
+  local theme=$1
+  eval "$(oh-my-posh init bash --config ~/.themes/${theme//-/_}.omp.json)"
+  export EZA_CONFIG_DIR="$HOME/.config/eza/${theme}/"
+  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/${theme}.theme
+}
+
 if [[ $TERM =~ ghostty ]] || [[ "$tmux_client" =~ ghostty ]]; then
-  eval "$(oh-my-posh init bash --config ~/.themes/everforest_light.omp.json)"
-  export EZA_CONFIG_DIR="$HOME/.config/eza/everforest-light/"
-  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/everforest-light.theme
+  setup_theme "everforest-light"
 elif [[ $TERM =~ alacritty ]] || [[ "$tmux_client" =~ alacritty ]]; then
-  eval "$(oh-my-posh init bash --config ~/.themes/gruvbox_light.omp.json)"
-  export EZA_CONFIG_DIR="$HOME/.config/eza/gruvbox-light/"
-  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/gruvbox-light.theme
+  setup_theme "gruvbox-light"
 elif [[ $TERM =~ kitty ]] || [[ "$tmux_client" =~ kitty ]]; then
-  eval "$(oh-my-posh init bash --config ~/.themes/solarized_dark.omp.json)"
-  export EZA_CONFIG_DIR="$HOME/.config/eza/solarized-dark/"
-  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/solarized-dark.theme
+  setup_theme "solarized-dark"
 else
-  eval "$(oh-my-posh init bash --config ~/.themes/catppuccin_mocha.omp.json)"
-  export EZA_CONFIG_DIR="$HOME/.config/eza/catppuccin-mocha/"
-  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/catppuccin-mocha.theme
+  setup_theme "catppuccin-mocha"
 fi
-eval "$(zoxide init bash)"
+unset -f setup_theme
 
 trap 'echo "$PWD" > ~/.local/state/last_cwd' EXIT
 

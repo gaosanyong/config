@@ -1,6 +1,4 @@
-if [[ -f ~/.bashrc ]]; then
-    . ~/.bashrc
-fi
+[[ -f ~/.bashrc ]] && source ~/.bashrc
 
 # keeps Mac awake
 if ! pgrep "caffeinate" > /dev/null
@@ -12,10 +10,11 @@ fi
 # -- History --
 export HISTCONTROL=erasedups:ignorespace
 export HISTFILE=$HOME/.bash_history
-export HISTFILESIZE=10000
+export HISTFILESIZE=-1
 export HISTIGNORE='history*:ls*'
 export HISTSIZE=10000
 export HISTTIMEFORMAT="%h %d %H:%M:%S> "
+shopt -s histappend
 
 # -- Environment variables --
 export CPPFLAGS="-I/opt/homebrew/opt/util-linux/include"

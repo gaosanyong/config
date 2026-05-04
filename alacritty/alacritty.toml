@@ -12,6 +12,15 @@ import = [
     "~/.config/alacritty/alacritty-theme/themes/gruvbox_light.toml"
 ]
 
+[colors.primary]
+background = '#f2e5bc'
+
+[colors.normal]
+black = '#3c3836'
+
+[colors.bright]
+black = '#7c6f64'
+
 [keyboard]
 bindings = [
   { key = "F11", action = "ToggleFullscreen"}
