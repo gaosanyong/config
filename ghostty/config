@@ -30,5 +30,8 @@ mouse-scroll-multiplier = 2
 # -- Quick Terminal --
 quick-terminal-position = top
 
+# -- Keybindings --
+keybind = super+backspace=text:\x1b[3;9~
+
 # -- Other --
 shell-integration-features = no-cursor,sudo,no-title

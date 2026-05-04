@@ -23,7 +23,8 @@ black = '#7c6f64'
 
 [keyboard]
 bindings = [
-  { key = "F11", action = "ToggleFullscreen"}
+  { key = "F11", action = "ToggleFullscreen"},
+  { key = "Back", mods = "Command", chars = "\u001b[3;9~"}
 ]
 
 [selection]

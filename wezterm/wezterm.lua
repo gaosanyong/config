@@ -25,6 +25,11 @@ config.keys = {
       wezterm.action.ClearScrollback("ScrollbackOnly"),
     }),
   },
+  {
+    key = "Backspace",
+    mods = "SUPER",
+    action = wezterm.action.SendString("\x1b[3;9~"),
+  },
 }
 
 config.window_decorations = "RESIZE"
