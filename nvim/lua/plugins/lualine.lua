@@ -6,15 +6,6 @@ return {
     local lazy_status = require("lazy.status")
     local terminal = require("core.terminal").detect()
 
-    local lualine_theme = "catppuccin"
-    if terminal == "kitty" then
-      lualine_theme = "solarized_dark"
-    elseif terminal == "alacritty" then
-      lualine_theme = "gruvbox_light"
-    elseif terminal == "ghostty" then
-      lualine_theme = "everforest"
-    end
-
     local sec_sep = { left = "", right = "" }
     local comp_sep = { left = "", right = "" }
     if terminal == "ghostty" then
@@ -30,7 +21,7 @@ return {
 
     lualine.setup({
       options = {
-        theme = lualine_theme,
+        theme = "auto",
         section_separators = sec_sep,
         component_separators = comp_sep,
       },
