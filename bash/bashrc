@@ -15,25 +15,26 @@ if [[ -n "$TMUX" ]]; then
   tmux_client=$(tmux display -p '#{client_termname}' 2>/dev/null)
 fi
 export BAT_THEME="ansi"
-setup_theme() {
-  local theme=$1
-  eval "$(oh-my-posh init bash --config ~/.themes/${theme//-/_}.omp.json)"
-  export EZA_CONFIG_DIR="$HOME/.config/eza/${theme}/"
-  [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/${theme}.theme
-}
 
 if [[ $TERM =~ ghostty ]] || [[ "$tmux_client" =~ ghostty ]]; then
-  setup_theme "everforest-light"
+  export LC_THEME="everforest-light"
 elif [[ $TERM =~ alacritty ]] || [[ "$tmux_client" =~ alacritty ]]; then
-  setup_theme "gruvbox-light"
+  export LC_THEME="gruvbox-light"
 elif [[ $TERM =~ kitty ]] || [[ "$tmux_client" =~ kitty ]]; then
-  setup_theme "solarized-dark"
+  export LC_THEME="solarized-dark"
 else
-  setup_theme "catppuccin-mocha"
+  export LC_THEME="catppuccin-mocha"
 fi
-unset -f setup_theme
+
+eval "$(oh-my-posh init bash --config ~/.themes/${LC_THEME//-/_}.omp.json)"
+export EZA_CONFIG_DIR="$HOME/.config/eza/${LC_THEME}/"
+[[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/${LC_THEME}.theme
 
 trap 'echo "$PWD" > ~/.local/state/last_cwd' EXIT
 
+clear-scrollback() { printf '\e[2J\e[3J\e[H'; }
+bind -x '"\ek": clear-scrollback'
+
 export PATH="$PATH:/Users/gaoyescm/.local/bin"
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+

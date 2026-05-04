@@ -20,10 +20,7 @@ config.keys = {
   {
     key = "k",
     mods = "SUPER",
-    action = wezterm.action.Multiple({
-      wezterm.action.SendKey({ key = "l", mods = "CTRL" }),
-      wezterm.action.ClearScrollback("ScrollbackOnly"),
-    }),
+    action = wezterm.action.SendString("\x1bk"),
   },
   {
     key = "Backspace",

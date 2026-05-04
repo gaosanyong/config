@@ -32,6 +32,7 @@ quick-terminal-position = top
 
 # -- Keybindings --
 keybind = super+backspace=text:\x1b[3;9~
+keybind = super+k=text:\x1bk
 
 # -- Other --
 shell-integration-features = no-cursor,sudo,no-title
