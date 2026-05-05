@@ -6,8 +6,8 @@ return {
     local lazy_status = require("lazy.status")
     local terminal = require("core.terminal").detect()
 
-    local sec_sep = { left = "", right = "" }
-    local comp_sep = { left = "", right = "" }
+    local sec_sep = { left = "", right = "" }
+    local comp_sep = { left = "", right = "" }
     if terminal == "ghostty" then
       sec_sep = { left = "", right = "" }
       comp_sep = { left = "", right = "" }
@@ -17,6 +17,9 @@ return {
     elseif terminal == "alacritty" then
       sec_sep = { left = "", right = "" }
       comp_sep = { left = "", right = "" }
+    elseif terminal == "wezterm" then
+      sec_sep = { left = "", right = "" }
+      comp_sep = { left = "", right = "" }
     end
 
     lualine.setup({

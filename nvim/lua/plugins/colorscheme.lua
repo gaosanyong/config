@@ -60,10 +60,17 @@ return {
       vim.g.everforest_enable_italic = true
       vim.g.everforest_better_performance = 1
       vim.cmd.colorscheme("everforest")
-    else
+    elseif terminal == "wezterm" then
       vim.o.background = "dark"
       require("catppuccin").setup({ flavour = "mocha" })
       vim.cmd.colorscheme("catppuccin")
+    else
+      vim.o.background = "dark"
+      require("gruvbox").setup({
+        contrast = "hard",
+        italic = { strings = true, emphasis = true, comments = true },
+      })
+      vim.cmd.colorscheme("gruvbox")
     end
   end,
 }

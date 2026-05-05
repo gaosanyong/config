@@ -1,0 +1,140 @@
+# Gruvbox Dark Hard for eza
+
+filekinds:
+  normal:
+    foreground: "#ebdbb2"
+  directory:
+    foreground: "#83a598"
+    bold: true
+  symlink:
+    foreground: "#8ec07c"
+  pipe:
+    foreground: "#fabd2f"
+  block_device:
+    foreground: "#fe8019"
+  char_device:
+    foreground: "#fe8019"
+  socket:
+    foreground: "#d3869b"
+  special:
+    foreground: "#fabd2f"
+  executable:
+    foreground: "#b8bb26"
+    bold: true
+  mount_point:
+    foreground: "#83a598"
+    bold: true
+
+perms:
+  user_read:
+    foreground: "#b8bb26"
+  user_write:
+    foreground: "#fabd2f"
+  user_execute_file:
+    foreground: "#fb4934"
+  user_execute_other:
+    foreground: "#fb4934"
+  group_read:
+    foreground: "#b8bb26"
+  group_write:
+    foreground: "#fabd2f"
+  group_execute:
+    foreground: "#fb4934"
+  other_read:
+    foreground: "#b8bb26"
+  other_write:
+    foreground: "#fabd2f"
+  other_execute:
+    foreground: "#fb4934"
+  special_user_file:
+    foreground: "#d3869b"
+  special_other:
+    foreground: "#d3869b"
+  attribute:
+    foreground: "#a89984"
+
+size:
+  number_byte:
+    foreground: "#b8bb26"
+  number_kilo:
+    foreground: "#b8bb26"
+  number_mega:
+    foreground: "#fabd2f"
+  number_giga:
+    foreground: "#fe8019"
+  number_huge:
+    foreground: "#fb4934"
+  unit_byte:
+    foreground: "#b8bb26"
+  unit_kilo:
+    foreground: "#b8bb26"
+  unit_mega:
+    foreground: "#fabd2f"
+  unit_giga:
+    foreground: "#fe8019"
+  unit_huge:
+    foreground: "#fb4934"
+
+users:
+  user_you:
+    foreground: "#83a598"
+  user_other:
+    foreground: "#a89984"
+  group_yours:
+    foreground: "#83a598"
+  group_other:
+    foreground: "#a89984"
+
+git:
+  new:
+    foreground: "#b8bb26"
+  modified:
+    foreground: "#fabd2f"
+  deleted:
+    foreground: "#fb4934"
+  renamed:
+    foreground: "#8ec07c"
+  ignored:
+    foreground: "#504945"
+  conflicted:
+    foreground: "#fb4934"
+    bold: true
+
+symlink_path:
+  foreground: "#8ec07c"
+
+punctuation:
+  foreground: "#504945"
+
+date:
+  foreground: "#d3869b"
+
+inode:
+  foreground: "#a89984"
+
+blocks:
+  foreground: "#a89984"
+
+header:
+  foreground: "#ebdbb2"
+  bold: true
+
+filetype:
+  image:
+    foreground: "#d3869b"
+  video:
+    foreground: "#d3869b"
+  music:
+    foreground: "#8ec07c"
+  lossless:
+    foreground: "#8ec07c"
+  crypto:
+    foreground: "#fe8019"
+  document:
+    foreground: "#83a598"
+  compressed:
+    foreground: "#fb4934"
+  temp:
+    foreground: "#504945"
+  compiled:
+    foreground: "#fabd2f"

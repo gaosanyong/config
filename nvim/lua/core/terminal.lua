@@ -19,6 +19,8 @@ function M.detect()
     _detected = "alacritty"
   elseif term:match("ghostty") or tmux_term:match("ghostty") then
     _detected = "ghostty"
+  elseif term:match("WezTerm") or tmux_term:match("WezTerm") then
+    _detected = "wezterm"
   else
     _detected = "default"
   end

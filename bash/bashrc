@@ -14,17 +14,20 @@ eval "$(zoxide init bash)"
 if [[ -n "$TMUX" ]]; then
   tmux_client=$(tmux display -p '#{client_termname}' 2>/dev/null)
 fi
-export BAT_THEME="ansi"
-
 if [[ $TERM =~ ghostty ]] || [[ "$tmux_client" =~ ghostty ]]; then
   export LC_THEME="everforest-light"
 elif [[ $TERM =~ alacritty ]] || [[ "$tmux_client" =~ alacritty ]]; then
   export LC_THEME="gruvbox-light"
 elif [[ $TERM =~ kitty ]] || [[ "$tmux_client" =~ kitty ]]; then
   export LC_THEME="solarized-dark"
-else
+elif [[ $TERM =~ WezTerm ]] || [[ "$tmux_client" =~ WezTerm ]]; then
   export LC_THEME="catppuccin-mocha"
+else
+  export LC_THEME="gruvbox-dark-hard"
 fi
+
+export BAT_THEME="ansi"
+[[ $LC_THEME == "gruvbox-dark-hard" ]] && export BAT_THEME="gruvbox-dark"
 
 eval "$(oh-my-posh init bash --config ~/.themes/${LC_THEME//-/_}.omp.json)"
 export EZA_CONFIG_DIR="$HOME/.config/eza/${LC_THEME}/"

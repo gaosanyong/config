@@ -1,0 +1,25 @@
+## Status bar — gruvbox dark hard (triangle powerline style matching lualine)
+set status-position top
+set status-interval 5
+set status-style "bg=#1d2021,fg=#ebdbb2"
+
+# Left: session name flows directly into window list
+set status-left-length 40
+set status-left "#[bg=#d79921,fg=#1d2021,bold] #S #[bg=#3c3836,fg=#d79921]"
+
+# Right: dir, date, time with triangle separators
+set status-right-length 80
+set status-right "#[fg=#3c3836,bg=#1d2021]#[bg=#3c3836,fg=#ebdbb2] #{=30:pane_current_path} #[fg=#d79921,bg=#3c3836]#[bg=#d79921,fg=#1d2021,bold] %a %b %d %H:%M "
+
+# Window list
+set status-justify left
+set window-status-format "#[fg=#a89984,bg=#3c3836] #I:#W #[fg=#3c3836,bg=#1d2021]"
+set window-status-current-format "#[fg=#ebdbb2,bg=#3c3836,bold] #I:#W #[fg=#3c3836,bg=#1d2021]"
+set window-status-separator ""
+
+# Pane borders
+set pane-border-style "fg=#3c3836"
+set pane-active-border-style "fg=#d79921"
+
+# Message and command bar
+set message-style "bg=#d79921,fg=#1d2021,bold"
