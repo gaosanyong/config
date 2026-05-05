@@ -31,6 +31,7 @@ export EZA_CONFIG_DIR="$HOME/.config/eza/${LC_THEME}/"
 [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/${LC_THEME}.theme
 
 trap 'echo "$PWD" > ~/.local/state/last_cwd' EXIT
+[[ -z "$TMUX" && -r ~/.local/state/last_cwd ]] && cd "$(< ~/.local/state/last_cwd)"
 
 clear-scrollback() { printf '\e[2J\e[3J\e[H'; }
 bind -x '"\ek": clear-scrollback'

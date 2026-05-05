@@ -8,8 +8,16 @@
           "background": "#073642",
           "foreground": "#93a1a1",
           "style": "powerline",
-          "template": "{{ if .WSL }}WSL at{{ end }} {{.Icon}} ",
+          "template": " {{.Icon}} ",
           "type": "os"
+        },
+        {
+          "background": "#073642",
+          "foreground": "#93a1a1",
+          "powerline_symbol": "",
+          "style": "powerline",
+          "template": "{{ .HostName }} ",
+          "type": "session"
         },
         {
           "background": "#0b4d6a",
