@@ -19,7 +19,7 @@ function M.detect()
     _detected = "alacritty"
   elseif term:match("ghostty") or tmux_term:match("ghostty") then
     _detected = "ghostty"
-  elseif term:match("WezTerm") or tmux_term:match("WezTerm") then
+  elseif term:lower():match("wezterm") or tmux_term:lower():match("wezterm") then
     _detected = "wezterm"
   else
     _detected = "default"

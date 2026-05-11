@@ -20,7 +20,7 @@ elif [[ $TERM =~ alacritty ]] || [[ "$tmux_client" =~ alacritty ]]; then
   export LC_THEME="gruvbox-light"
 elif [[ $TERM =~ kitty ]] || [[ "$tmux_client" =~ kitty ]]; then
   export LC_THEME="solarized-dark"
-elif [[ $TERM =~ WezTerm ]] || [[ "$tmux_client" =~ WezTerm ]]; then
+elif [[ $TERM =~ wezterm ]] || [[ "$tmux_client" =~ wezterm ]]; then
   export LC_THEME="catppuccin-mocha"
 else
   export LC_THEME="gruvbox-dark-hard"
