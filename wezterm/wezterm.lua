@@ -47,6 +47,16 @@ config.keys = {
     mods = "SUPER|SHIFT",
     action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
   },
+  {
+    key = "LeftArrow",
+    mods = "SUPER",
+    action = wezterm.action.SendString("\x01"),
+  },
+  {
+    key = "RightArrow",
+    mods = "SUPER",
+    action = wezterm.action.SendString("\x05"),
+  },
 }
 
 config.mouse_bindings = {

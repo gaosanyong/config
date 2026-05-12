@@ -40,7 +40,9 @@ mouse = { enabled = true, mods = "Shift" }
 bindings = [
   { key = "F11", action = "ToggleFullscreen"},
   { key = "Back", mods = "Command", chars = "\u001b[3;9~"},
-  { key = "K", mods = "Command", chars = "\u001bk"}
+  { key = "K", mods = "Command", chars = "\u001bk"},
+  { key = "Left", mods = "Command", chars = "\u0001"},
+  { key = "Right", mods = "Command", chars = "\u0005"},
 ]
 
 [selection]
