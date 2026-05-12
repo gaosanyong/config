@@ -11,6 +11,7 @@ size = 14
 import = [
     "~/.config/alacritty/alacritty-theme/themes/gruvbox_light.toml"
 ]
+live_config_reload = true
 
 [colors.primary]
 background = '#f2e5bc'
@@ -22,10 +23,17 @@ black = '#3c3836'
 black = '#7c6f64'
 
 [[hints.enabled]]
+regex = "https://[^\\s}>\\)]+"
+hyperlinks = true
+post_processing = true
+command = { program = "open" }
+mouse = { enabled = true, mods = "Command" }
+
+[[hints.enabled]]
 regex = "fb-vscode://[^\\s]+"
 hyperlinks = true
 post_processing = false
-command = { program = "open" }  # macOS
+command = { program = "open" }
 mouse = { enabled = true, mods = "Shift" }
 
 [keyboard]

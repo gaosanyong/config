@@ -49,6 +49,19 @@ config.keys = {
   },
 }
 
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = "Left" } },
+    mods = "SUPER",
+    action = wezterm.action.OpenLinkAtMouseCursor,
+  },
+  {
+    event = { Up = { streak = 1, button = "Left" } },
+    mods = "NONE",
+    action = wezterm.action.CompleteSelection("ClipboardAndPrimarySelection"),
+  },
+}
+
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 

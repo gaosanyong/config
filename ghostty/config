@@ -26,6 +26,7 @@ cursor-opacity = 0.8
 copy-on-select = clipboard
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
+link-url = true
 
 # -- Quick Terminal --
 quick-terminal-position = top
