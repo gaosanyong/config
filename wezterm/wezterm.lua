@@ -27,6 +27,16 @@ config.keys = {
     mods = "SUPER",
     action = wezterm.action.SendString("\x1b[3;9~"),
   },
+  {
+    key = "Enter",
+    mods = "SUPER|SHIFT",
+    action = wezterm.action.TogglePaneZoomState,
+  },
+  {
+    key = "w",
+    mods = "SUPER",
+    action = wezterm.action.CloseCurrentPane({ confirm = true }),
+  },
 }
 
 config.window_decorations = "RESIZE"
