@@ -1,8 +1,7 @@
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 
 # keeps Mac awake
-if ! pgrep "caffeinate" > /dev/null
-then
+if ! pgrep "caffeinate" > /dev/null; then
     caffeinate -id &
     disown
 fi
