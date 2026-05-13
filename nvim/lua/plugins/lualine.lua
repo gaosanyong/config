@@ -18,8 +18,8 @@ return {
       sec_sep = { left = "", right = "" }
       comp_sep = { left = "", right = "" }
     elseif terminal == "wezterm" then
-      sec_sep = { left = "", right = "" }
-      comp_sep = { left = "", right = "" }
+      sec_sep = { left = "", right = "" }
+      comp_sep = { left = "", right = "" }
     end
 
     lualine.setup({

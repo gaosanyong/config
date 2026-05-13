@@ -5,16 +5,16 @@ set status-style "bg=#1E1E2E,fg=#BAC2DE"
 
 # Left: session name with block separators
 set status-left-length 40
-set status-left "#[bg=#89B4FA,fg=#1E1E2E,bold] #S #[bg=#1E1E2E,fg=#89B4FA]"
+set status-left "#[bg=#89B4FA,fg=#1E1E2E,bold] #S #[bg=#1E1E2E,fg=#89B4FA]"
 
 # Right: dir, date, time with block separators
 set status-right-length 80
-set status-right "#[fg=#45475A]#[bg=#45475A,fg=#BAC2DE] #{=30:pane_current_path} #[fg=#89B4FA]#[bg=#89B4FA,fg=#1E1E2E,bold] %a %b %d %H:%M "
+set status-right "#[fg=#45475A]#[bg=#45475A,fg=#BAC2DE] #{=30:pane_current_path} #[fg=#89B4FA]#[bg=#89B4FA,fg=#1E1E2E,bold] %a %b %d %H:%M "
 
 # Window list
 set status-justify left
-set window-status-format "#[fg=#1E1E2E,bg=#313244]#[fg=#BAC2DE,bg=#313244] #I:#W #[fg=#313244,bg=#1E1E2E]"
-set window-status-current-format "#[fg=#1E1E2E,bg=#89B4FA]#[fg=#1E1E2E,bg=#89B4FA,bold] #I:#W #[fg=#89B4FA,bg=#1E1E2E]"
+set window-status-format "#[fg=#1E1E2E,bg=#313244]#[fg=#BAC2DE,bg=#313244] #I:#W #[fg=#313244,bg=#1E1E2E]"
+set window-status-current-format "#[fg=#1E1E2E,bg=#89B4FA]#[fg=#1E1E2E,bg=#89B4FA,bold] #I:#W #[fg=#89B4FA,bg=#1E1E2E]"
 set window-status-separator " "
 
 # Pane borders

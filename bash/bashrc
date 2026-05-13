@@ -13,7 +13,6 @@ fi
 # e.g. $PATH contains Homebrew locations
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --bash)"
-eval "$(zoxide init bash)"
 
 if [[ -n "$TMUX" ]]; then
   tmux_client=$(tmux display -p '#{client_termname}' 2>/dev/null)
@@ -33,7 +32,13 @@ fi
 export BAT_THEME="ansi"
 [[ $LC_THEME == "gruvbox-dark-hard" ]] && export BAT_THEME="gruvbox-dark"
 
-eval "$(oh-my-posh init bash --config ~/.themes/${LC_THEME//-/_}.omp.json)"
+if [[ $LC_THEME == "catppuccin-mocha" ]]; then
+  export STARSHIP_CONFIG="$HOME/.config/starship/catppuccin-powerline.toml"
+  eval "$(starship init bash)"
+else
+  eval "$(oh-my-posh init bash --config ~/.themes/${LC_THEME//-/_}.omp.json)"
+fi
+eval "$(zoxide init bash)"
 export EZA_CONFIG_DIR="$HOME/.config/eza/${LC_THEME}/"
 [[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/${LC_THEME}.theme
 
