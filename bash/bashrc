@@ -2,52 +2,53 @@
 [[ $- != *i* ]] && return
 
 [[ -f /etc/bashrc      ]] && source /etc/bashrc
-[[ -e ~/.bash_alias    ]] && source ~/.bash_alias
-[[ -e ~/.bash_function ]] && source ~/.bash_function
+[[ -e "$HOME/.bash_alias"    ]] && source "$HOME/.bash_alias"
+[[ -e "$HOME/.bash_function" ]] && source "$HOME/.bash_function"
 
 if [[ -n "$NVIM" && -n "$NVIM_PARENT_TERM" ]]; then
   export TERM="$NVIM_PARENT_TERM"
 fi
 
-# export Homebrew environment variables
-# e.g. $PATH contains Homebrew locations
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(fzf --bash)"
-
+declare -A _term_themes=(
+  [ghostty]=everforest-light
+  [alacritty]=gruvbox-light
+  [kitty]=solarized-dark
+  [wezterm]=catppuccin-mocha
+)
+_tmux_client=""
 if [[ -n "$TMUX" ]]; then
-  tmux_client=$(tmux display -p '#{client_termname}' 2>/dev/null)
+  _tmux_client=$(tmux display -p '#{client_termname}' 2>/dev/null)
 fi
-if [[ $TERM =~ ghostty ]] || [[ "$tmux_client" =~ ghostty ]]; then
-  export LC_THEME="everforest-light"
-elif [[ $TERM =~ alacritty ]] || [[ "$tmux_client" =~ alacritty ]]; then
-  export LC_THEME="gruvbox-light"
-elif [[ $TERM =~ kitty ]] || [[ "$tmux_client" =~ kitty ]]; then
-  export LC_THEME="solarized-dark"
-elif [[ $TERM =~ wezterm ]] || [[ "$tmux_client" =~ wezterm ]]; then
-  export LC_THEME="catppuccin-mocha"
-else
-  export LC_THEME="gruvbox-dark-hard"
-fi
+export LC_THEME="gruvbox-dark"
+for _term in "${!_term_themes[@]}"; do
+  if [[ $TERM =~ $_term ]] || [[ "$_tmux_client" =~ $_term ]]; then
+    export LC_THEME="${_term_themes[$_term]}"
+    break
+  fi
+done
+unset _term_themes _tmux_client _term
 
 export BAT_THEME="ansi"
-[[ $LC_THEME == "gruvbox-dark-hard" ]] && export BAT_THEME="gruvbox-dark"
 
 if [[ $LC_THEME == "catppuccin-mocha" ]]; then
   export STARSHIP_CONFIG="$HOME/.config/starship/catppuccin-powerline.toml"
   eval "$(starship init bash)"
 else
-  eval "$(oh-my-posh init bash --config ~/.themes/${LC_THEME//-/_}.omp.json)"
+  eval "$(oh-my-posh init bash --config "$HOME/.themes/${LC_THEME//-/_}.omp.json")"
 fi
-eval "$(zoxide init bash)"
-export EZA_CONFIG_DIR="$HOME/.config/eza/${LC_THEME}/"
-[[ -n "$TMUX" ]] && tmux source-file ~/.config/tmux/themes/${LC_THEME}.theme
 
-trap 'echo "$PWD" > ~/.local/state/last_cwd' EXIT
-[[ -z "$TMUX" && -r ~/.local/state/last_cwd ]] && cd "$(< ~/.local/state/last_cwd)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(fzf --bash)"
+eval "$(zoxide init bash)"
+
+export EZA_CONFIG_DIR="$HOME/.config/eza/${LC_THEME}/"
+[[ -n "$TMUX" ]] && tmux source-file "$HOME/.config/tmux/themes/${LC_THEME}.theme"
+
+trap 'echo "$PWD" > "$HOME/.local/state/last_cwd"' EXIT
+[[ -z "$TMUX" && -r "$HOME/.local/state/last_cwd" ]] && cd "$(< "$HOME/.local/state/last_cwd")"
 
 clear-scrollback() { printf '\e[2J\e[3J\e[H'; }
 bind -x '"\ek": clear-scrollback'
 
 export PATH="$PATH:/Users/gaoyescm/.local/bin"
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
-
