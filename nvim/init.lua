@@ -38,6 +38,18 @@ end
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
+vim.api.nvim_create_autocmd("TermEnter", {
+  callback = function()
+    vim.o.mouse = ""
+  end,
+})
+
+vim.api.nvim_create_autocmd("TermLeave", {
+  callback = function()
+    vim.o.mouse = "nvi"
+  end,
+})
+
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" }, -- Apply to all file types
   callback = function(ev)
