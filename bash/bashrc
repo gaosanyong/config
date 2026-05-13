@@ -5,6 +5,10 @@
 [[ -e ~/.bash_alias    ]] && source ~/.bash_alias
 [[ -e ~/.bash_function ]] && source ~/.bash_function
 
+if [[ -n "$NVIM" && -n "$NVIM_PARENT_TERM" ]]; then
+  export TERM="$NVIM_PARENT_TERM"
+fi
+
 # export Homebrew environment variables
 # e.g. $PATH contains Homebrew locations
 eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -36,3 +36,5 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.colorcolumn = "80" -- set column boundary
+
+vim.env.NVIM_PARENT_TERM = vim.env.TERM
