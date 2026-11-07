@@ -16,3 +16,15 @@ ln -s ~/.config/tmux/themes .tmux/themes
 
 ln -s ~/.config/oh-my-posh/themes ~/.themes
 ```
+
+When only specific configurations are needed, you can use Git's sparse checkout feature to download a fraction of a repository. For example, if a local workspace only requires the nvim directory and the README.md file, sparse checkout allows you to pull those exclusively.
+
+```
+mkdir .config
+git init
+git remote add -f origin https:/github.com/gaosanyong/config
+git sparse-checkout init --cone
+git sparse-checkout set nvim
+git sparse-checkout add README.md --skip-checks
+git pull origin master
+```
