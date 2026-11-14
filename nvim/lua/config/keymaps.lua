@@ -33,3 +33,6 @@ for _, buf in ipairs(vim.api.nvim_list_bufs()) do
     map_run_cpp(buf)
   end
 end
+
+-- Type ;; in insert mode to put a semicolon at the end of the line
+vim.keymap.set("i", ";;", "<Esc>A;", { desc = "Append semicolon to end of line" })
