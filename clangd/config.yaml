@@ -1,0 +1,5 @@
+If:
+  PathExclude: [.*\.c]
+CompileFlags:
+  Remove: [-std=*]
+  Add: [-std=c++23]
